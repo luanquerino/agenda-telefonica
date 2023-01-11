@@ -20,7 +20,7 @@ function adicionaLinha() {
     if (numeros.includes(parseInt(inputNumeroContato.value))) {
         alert(`O número: ${inputNumeroContato.value} já foi adicionado`);
     } if (contatos.includes(inputNomeContato.value)) {
-        alert(`O contanto: ${inputNomeContato.value} já existe, use um nome diferente`);
+        alert(`O contato: ${inputNomeContato.value} já existe, use um nome diferente`);
     } else {
         contatos.push(inputNomeContato.value);
         numeros.push(parseInt(inputNumeroContato.value));
