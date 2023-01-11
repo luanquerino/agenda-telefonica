@@ -15,12 +15,18 @@ form.addEventListener('submit', function(e) {
 function adicionaLinha() {
     const inputNomeContato = document.getElementById('nome-contato');
     const inputNumeroContato = document.getElementById('numero-contato');
+    const mensagemSucesso = `O contato: <b>${inputNomeContato.value}</b> foi adicionado à lista`;
 
-    if (contatos.includes(inputNomeContato.value)) {
-        alert(`O contato: ${inputNomeContato.value} já foi adicionado`);
+    if (numeros.includes(parseInt(inputNumeroContato.value))) {
+        alert(`O número: ${inputNumeroContato.value} já foi adicionado`);
+    } if (contatos.includes(inputNomeContato.value)) {
+        alert(`O contanto: ${inputNomeContato.value} já existe, use um nome diferente`);
     } else {
         contatos.push(inputNomeContato.value);
         numeros.push(parseInt(inputNumeroContato.value));
+        const containerMensagemSucesso = document.querySelector('.success-message');
+        containerMensagemSucesso.innerHTML = mensagemSucesso;
+        containerMensagemSucesso.style.display = 'block';
     
         let linha = '<tr>';
         linha += `<td>${inputNomeContato.value}</td>`;
@@ -50,6 +56,10 @@ function totalContatos() {
     }
 
     return soma = contatos.length;
+}
+
+function sucesso() {
+    let mensagemSucesso = document.getElementsByClassName('success-message');
 }
 
 
